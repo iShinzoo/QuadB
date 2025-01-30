@@ -13,7 +13,7 @@ export const getContract = async () => {
   // Check network (example for Goerli testnet)
   const provider = new ethers.BrowserProvider(window.ethereum);
   const network = await provider.getNetwork();
-  if (network.chainId !== BigInt(5)) { // Update with your chain ID
+  if (network.chainId !== BigInt(11155111)) { // Update with your chain ID
     throw new Error("Please connect to the Goerli Testnet");
   }
 
