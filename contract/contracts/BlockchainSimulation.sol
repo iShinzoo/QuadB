@@ -65,7 +65,7 @@ contract BlockchainSimulation {
     }
 
     function calculateHash(Block memory _block) internal pure returns (bytes32) {
-    // Pack each transaction into a single bytes variable
+    
     bytes memory packedTransactions;
     for (uint256 i = 0; i < _block.transactions.length; i++) {
         packedTransactions = abi.encodePacked(
@@ -74,7 +74,7 @@ contract BlockchainSimulation {
         );
     }
     
-    // Include the packed transactions in the block hash calculation
+   
     return keccak256(abi.encodePacked(
         _block.index,
         _block.timestamp,

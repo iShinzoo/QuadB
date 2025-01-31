@@ -17,6 +17,8 @@ export default function Home() {
   const [isConnected, setIsConnected] = useState(false);
 
   useEffect(() => {
+
+    // Connection 
     const checkConnection = async () => {
       if (window.ethereum?.selectedAddress) {
         try {
@@ -72,6 +74,7 @@ export default function Home() {
     }
   };
 
+  // connect Wallet to metamask
   const connectWallet = async () => {
     try {
       setError("");
@@ -85,6 +88,7 @@ export default function Home() {
     }
   };
 
+  // Adding transaction to blockchain
   const handleAddTransaction = async () => {
     if (!transaction.trim()) {
       setError("Transaction cannot be empty");
@@ -102,6 +106,7 @@ export default function Home() {
     }
   };
 
+  // Mining block 
   const handleMineBlock = async () => {
     try {
       setIsMining(true);
@@ -116,6 +121,8 @@ export default function Home() {
     }
   };
 
+
+  // UI 
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100">
       <div className="max-w-4xl mx-auto p-6">
